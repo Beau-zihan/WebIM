@@ -4,6 +4,10 @@ WebIM是一款基于jQuery的一款web即时通讯插件，姑且这么称呼吧
 
 2012年项目，已不再维护。
 
+## 截图
+
+![webim](https://github.com/Beau-zihan/WebIM/blob/master/webim-preview.png)
+
 ## 配置
 <pre>$(function() {
          $(document).FnWebIM({
