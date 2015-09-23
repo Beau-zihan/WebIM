@@ -1,0 +1,56 @@
+*{padding:0;margin:0;}
+img{border:none;}
+.jcrop-holder {direction: ltr;text-align: left;}
+.jcrop-vline,.jcrop-hline{background:#FFF url(../img/Jcrop.gif) top left repeat;font-size:0;position:absolute;}
+.jcrop-vline{height:100%;width:1px!important;}
+.jcrop-hline{height:1px!important;width:100%;}
+.jcrop-vline.right{right:0;}
+.jcrop-hline.bottom{bottom:0;}
+.jcrop-handle{background-color:#333;border:1px #eee solid;font-size:1px;}
+.jcrop-tracker{height: 100%; width: 100%;-webkit-tap-highlight-color: transparent;-webkit-touch-callout: none; -webkit-user-select: none;}
+.jcrop-handle.ord-n{left:50%;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-s{bottom:0;left:50%;margin-bottom:-4px;margin-left:-4px;}
+.jcrop-handle.ord-e{margin-right:-4px;margin-top:-4px;right:0;top:50%;}
+.jcrop-handle.ord-w{left:0;margin-left:-4px;margin-top:-4px;top:50%;}
+.jcrop-handle.ord-nw{left:0;margin-left:-4px;margin-top:-4px;top:0;}
+.jcrop-handle.ord-ne{margin-right:-4px;margin-top:-4px;right:0;top:0;}
+.jcrop-handle.ord-se{bottom:0;margin-bottom:-4px;margin-right:-4px;right:0;}
+.jcrop-handle.ord-sw{bottom:0;left:0;margin-bottom:-4px;margin-left:-4px;}
+.jcrop-dragbar.ord-n,.jcrop-dragbar.ord-s{height:7px;width:100%;}
+.jcrop-dragbar.ord-e,.jcrop-dragbar.ord-w{height:100%;width:7px;}
+.jcrop-dragbar.ord-n{margin-top:-4px;}
+.jcrop-dragbar.ord-s{bottom:0;margin-bottom:-4px;}
+.jcrop-dragbar.ord-e{margin-right:-4px;right:0;}
+.jcrop-dragbar.ord-w{margin-left:-4px;}
+.jcrop-light .jcrop-vline,.jcrop-light .jcrop-hline{background:#FFF;filter:Alpha(opacity=70)!important;opacity:.70!important;}
+.jcrop-light .jcrop-handle{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#000;border-color:#FFF;border-radius:3px;}
+.jcrop-dark .jcrop-vline,.jcrop-dark .jcrop-hline{background:#000;filter:Alpha(opacity=70)!important;opacity:.7!important;}
+.jcrop-dark .jcrop-handle{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#FFF;border-color:#000;	border-radius:3px;}
+.jcrop-holder img,img.jcrop-preview{ max-width: none; }
+
+.avatarbox{background: #fff;width: 352px; height:280px;}
+.avatarbox .imgcenter{background: url(../img/avatar_bg.png) no-repeat;border:solid 1px #eee;width:280px;height:280px;overflow: hidden;display:table-cell;text-align:center;vertical-align:middle;*display:block;font-size:280px;+font-size:270px; }
+.avatarbox .uploading{background:#fafafa url(../img/loading.gif) no-repeat center center;}
+.avatarbox .uploadcomplete{background: #fff;}
+.avatarbox .imgcenter img{display:block;max-height: 280px;max-width: 280px;vertical-align: middle;}
+.avatarbox .imgproview_b{float: left;}
+.avatarbox .imgproview{float: left;margin-left:10px;width: 60px;}
+.avatarbox .imgproview a{font-size: 12px;display: block;color:#666;display: block;width:60px;height: 21px;background: url("../img/favc_btn.png") no-repeat; text-align: center;line-height: 21px; text-decoration: none;}
+.avatarbox .imgproview a:hover{background-position: 0 bottom;color:#333;}
+.avatarbox .imgbox_b{height:100px; text-align: center}
+.avatarbox .imgbox_b div{width:50px;height:50px;overflow:hidden;margin:0 auto;background: #fafafa;}
+.avatarbox .imgbox_s{height:86px; text-align: center}
+.avatarbox .imgbox_s div{width:30px;height:30px;overflow:hidden;margin:0 auto;background: #fafafa;}
+.avatarbox .imgproview span{color:#999;font-size: 12px;line-height:1.2;display:block;margin:5px 0;}
+
+#uploadpic{margin:120px auto 0 auto;+margin-top:-26px;_margin-top:180px;}
+.avatarbox .imgcenter .uploadify-error {background-color: #FDE5DD !important;font-size:12px;}
+.avatarbox .imgcenter .uploadify-error a{display: none;}
+.uploadify {position: relative;margin-bottom: 1em;}
+.swfupload{background:transparent;_margin:0 0 0 -50px;}
+.uploadify-button {background: url(../img/upload_btn.png) no-repeat;width: 100%;}
+.uploadify:hover .uploadify-button {background-position:0 -36px;}
+.uploadify-error {background-color: #FDE5DD !important;font-size:12px !important;}
+.uploadify-error a{display: none;}
+.uploadify-progress {background-color: #E5E5E5;margin-top: 10px;width: 100%;}
+.uploadify-progress-bar {background-color: #0099FF;height: 3px;	width: 1px;}

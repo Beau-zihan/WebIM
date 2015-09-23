@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css" media="all">
+</head>
+<body>
+<img src="temp/pool.jpg" id="target" alt="Flowers" />
+<div style="width:50px;height:50px;overflow:hidden;">
+    <img src="temp/pool.jpg" id="preview_b" alt="Preview" class="jcrop-preview" />
+</div>
+<div style="width:30px;height:30px;overflow:hidden;">
+    <img src="temp/pool.jpg" id="preview_s" alt="Preview" class="jcrop-preview" />
+</div>
+<script type="text/javascript" src="../js/jQuery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+
+<script type="text/javascript">
+    jQuery(function($){
+        var jcrop_api, boundx, boundy;
+        $('#target').Jcrop({
+            onChange: updatePreview,
+            onSelect: updatePreview,
+            aspectRatio: 1
+        },function(){
+            var bounds = this.getBounds();
+            boundx = bounds[0];
+            boundy = bounds[1];
+            jcrop_api = this;
+        });
+        function updatePreview(c)
+        {
+            if (parseInt(c.w) > 0)
+            {
+                var rxb = 50 / c.w;
+                var ryb = 50 / c.h;
+                var rxs = 30 / c.w;
+                var rys = 30 / c.h;
+                $('#preview_b').css({
+                    width: Math.round(rxb * boundx) + 'px',
+                    height: Math.round(ryb * boundy) + 'px',
+                    marginLeft: '-' + Math.round(rxb * c.x) + 'px',
+                    marginTop: '-' + Math.round(ryb * c.y) + 'px'
+                });
+                $('#preview_s').css({
+                    width: Math.round(rxs * boundx) + 'px',
+                    height: Math.round(rys * boundy) + 'px',
+                    marginLeft: '-' + Math.round(rxs * c.x) + 'px',
+                    marginTop: '-' + Math.round(rys * c.y) + 'px'
+                });
+            }
+        };
+    });
+</script>
+</body>
+</html>

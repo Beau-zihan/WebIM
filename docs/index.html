@@ -1,0 +1,270 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>凡纳网 -- 技术说明文档</title>
+    <link rel="stylesheet" type="text/css" href="css/docs.css"/>
+    <link rel="stylesheet" type="text/css" href="prettify/prettify.css" media="all">
+</head>
+<body>
+<div class="fnFaq">
+    <div class="faq">
+        <div class="container">
+            <div class="logo"></div>
+            <div class="main">
+                <div class="faqLine"></div>
+                <div class="content">
+                    <dl>
+                        <dt>1.这是个什么插件？</dt>
+                        <dd>
+                            <div class="alert alert-info">此插件是凡纳网开发的基于jQuery的一款web即时通讯插件。
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>2.如何调用</dt>
+                        <dd>
+                            STEP1：在需要调用的页面最后引入以下js
+<pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="js/jQuery-1.7.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/fanna_im.plus.js?skin=fanna_im"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jQuery.fnIM.js"&gt;&lt;/script&gt;
+</pre>
+                            <div class="alert">注意：&lt;script type="text/javascript" src="js/fanna_im.plus.js?skin=fanna_im"&gt;&lt;/script&gt;中所带的skin参数为插件所用到的css文件，如无特殊需要，请勿更改，否则会出错！！！。
+                            </div>
+                            STEP2:调用插件
+<pre class="prettyprint linenums">
+$(function() {
+         $(document).FnWebIM();   //简单调用
+});
+</pre>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>3.参数设置</dt>
+                        <dd>
+<pre class="prettyprint linenums">
+$(function() {
+         $(document).FnWebIM({
+             autoLogin          :true,
+             msgRefreshTime    :1000,
+             friendRefreshTime :10000,
+             showSecretary     :true,
+             noticeContent     :"公告内容",
+             sendPicture       :true,
+             msgMaxSize        :300,
+             msgSound           :false,
+             defaultWindow     :""
+         });
+});
+</pre>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>4.【Demo】点击联系人后打开新聊天窗口</dt>
+                        <dd>
+                            html:
+<pre class="prettyprint linenums lang-html">
+&lt;a class="oWindow" href="#" uid="8759328409230"&gt;联系我&lt;/a&gt;
+</pre>
+                            jQuery:
+<pre class="prettyprint linenums">
+$(function() {
+        $("a.oWindow").click(function(){
+            var uid=$(this).attr("uid");
+             $(document).FnWebIM({
+                 defaultWindow     :uid    //注意uid的正确性，当获取不到用户信息时，会出错！！
+             });
+        });
+});
+</pre>
+                        </dd>
+                    </dl>
+                    <dt>5.相关参数说明</dt>
+                    <dd>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <td>参数</td>
+                                <td>类型</td>
+                                <td>说明</td>
+                                <td>默认值</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>autoLogin</td>
+                                <td>boolean型</td>
+                                <td>是否自动登录，true：自动登录，false：手动登录</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>msgRefreshTime</td>
+                                <td>number型</td>
+                                <td>消息刷新时间，单位为ms</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>friendRefreshTime</td>
+                                <td>number型</td>
+                                <td>好友列表刷新时间，单位为ms</td>
+                                <td>10000</td>
+                            </tr>
+                            <tr>
+                                <td>showSecretary</td>
+                                <td>boolean型</td>
+                                <td>默认是否显示小秘书，true：显示，false：不显示</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>noticeContent</td>
+                                <td>string型</td>
+                                <td>公告内容，为空时不显示公告</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>sendPicture</td>
+                                <td>boolean型</td>
+                                <td>是否允许发送图片，true：允许，false：不允许</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>msgMaxSize</td>
+                                <td>number型</td>
+                                <td>单条消息最大允许字符数</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>msgSound</td>
+                                <td>boolean型</td>
+                                <td>boolean型，是否开启声音提醒，true：开启，false:关闭</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>defaultWindow</td>
+                                <td>string型</td>
+                                <td>登录后打开新聊天窗口，此处接收的参数为联系人的uid，<br />否则会出错。为空时不打开新窗口</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+                    </dl>
+                    <dl>
+                        <dt>5.相关页面说明</dt>
+                        <dd>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <td>页面</td>
+                                    <td>参数说明</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>userinfo.jsp</td>
+                                    <td>· 从session中获取请求的用户标识(UID)；<br/>
+                                        · update:更新用户设置
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>chats.jsp</td>
+                                    <td>· 从session中获取请求的用户标识(UID)；<br />
+                                        · del:清空聊天记录；<br />
+                                        · add:查看更多记录；<br/>
+                                        · time:聊天记录刷新时间
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>friends.jsp</td>
+                                    <td>· 从session中获取请求的用户标识(UID)；<br />
+                                        · time:联系人列表刷新时间
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>company.html</td>
+                                    <td>· uid:所请求的用户uid；</td>
+                                </tr>
+                                <tr>
+                                    <td>friends.html</td>
+                                    <td>· 从session中获取请求的用户标识(UID)；<br/>
+                                        · type:好友类型：推荐好友|黑名单
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msgbox.html</td>
+                                    <td>· uid:所请求的用户uid；</td>
+                                </tr>
+                                <tr>
+                                    <td>product.html</td>
+                                    <td>· pid:所请求的产品ID；</td>
+                                </tr>
+                                <tr>
+                                    <td>set.html</td>
+                                    <td>暂空</td>
+                                </tr>
+                                </tbody>
+                                <thead>
+                                <tr>
+                                    <td>其他页面</td>
+                                    <td>说明</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>im_contact.html</td>
+                                    <td>联系人列表模板</td>
+                                </tr>
+                                <tr>
+                                    <td>im_window.html</td>
+                                    <td>聊天窗口模板</td>
+                                </tr>
+                                <tr>
+                                    <td>reprot.html</td>
+                                    <td>举报好友页面</td>
+                                </tr>
+                                <tr>
+                                    <td>share.html</td>
+                                    <td>产品分享页面</td>
+                                </tr>
+                                <tr>
+                                    <td>login.html</td>
+                                    <td>会话超时页面</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>6.实例演示</dt>
+                        <dd>
+                            <a href="../index.html" target="_blank" class="btn">普通示例[自动登录]</a>
+                            <a href="../demo.html" target="_blank" class="btn btn-success oWindow" uid="984234032932" >点击联系人登录并弹出联系人窗口</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>7.示例图</dt>
+                        <dd>
+                            <img src="img/webim.png" width="100%" alt="" />
+                            <a href="img/webim.png" target="_blank">查看大图</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="img"></div>
+        <div class="txt">凡纳网 fnWebIM插件说明文档</div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jQuery-1.7.1.min.js"></script>
+<script type="text/javascript" src="prettify/prettify.js"></script>
+<script type="text/javascript">
+    $(function () {
+        window.prettyPrint && prettyPrint()
+    });
+</script>
+</body>
+</html>

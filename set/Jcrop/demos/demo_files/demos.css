@@ -1,0 +1,89 @@
+/* Jcrop Demo CSS
+ * Not required to run Jcrop
+ * Just makes the demo pages look less ugly
+ */
+
+body
+{
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: Calibri, sans-serif;
+}
+
+.article h1
+{
+  color: #333;
+  font-size: 2.2em;
+  margin-top: .2em;
+}
+
+.jcropper-holder { border: 1px black solid; }
+
+#outer { text-align: center; }
+
+.jcExample
+{
+  text-align: left;
+  background: white;
+  width: 700px;
+  font-size: 80%;
+  margin: 1.5em auto 2em auto;
+  border: 1px #999 solid;
+  padding: 1em 2em 2em;
+}
+
+.jcExample .article { width: 565px; }
+
+form { margin: 1.5em 0; }
+form.coords label { margin-right: 1em; font-weight: bold; color: #900; }
+form.coords input { width: 3em; }
+
+.ui-button { font-size: 10pt; }
+.ui-dialog { font-size: 9pt; }
+.ui-state-default { font-size: 9pt; }
+.ui-widget-overlay { opacity: 0.80; filter: Alpha(opacity=70); }
+.jc-dialog { padding-top: 1em; }
+.ui-dialog p tt { color: yellow; }
+
+li small { font-style: normal; color: #CF4429; font-size: 11px; }
+
+.jcrop-light .jcrop-selection {
+  -moz-box-shadow: 0px 0px 15px #999; /* Firefox */
+  -webkit-box-shadow: 0px 0px 15px #999; /* Safari, Chrome */
+  box-shadow: 0px 0px 15px #999; /* CSS3 */
+}
+ .jcrop-dark .jcrop-selection {
+  -moz-box-shadow: 0px 0px 15px #000; /* Firefox */
+  -webkit-box-shadow: 0px 0px 15px #000; /* Safari, Chrome */
+  box-shadow: 0px 0px 15px #000; /* CSS3 */
+}
+
+.jcrop-fancy .jcrop-handle.ord-e {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-w {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-nw {
+  -webkit-border-bottom-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-ne {
+  -webkit-border-bottom-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-sw {
+  -webkit-border-top-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-se {
+  -webkit-border-top-left-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-s {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+}
+.jcrop-fancy .jcrop-handle.ord-n {
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+}
